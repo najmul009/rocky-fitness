@@ -16,7 +16,7 @@ const Header = () => {
 
     return (
         <Navbar bg="black" expand="lg" variant="dark">
-            <Container className='d-flex justify-content-between fs-4 fw-normal' >
+            <Container className='d-flex justify-content-between fs-5 fw-normal' >
                 <Navbar.Brand as={Link} to='/'className='logo d-flex'>
                 <div>
                     <h1>Rocky Fitness</h1>

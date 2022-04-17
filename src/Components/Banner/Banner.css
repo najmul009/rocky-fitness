@@ -9,20 +9,20 @@
 }
 
 .head-lines{
-    padding-top: 15rem;
+    padding-top: 10rem;
     width: 80%;
-    padding-left: 10rem;
+    padding-left: 6rem;
     color: white;
 }
 .head-lines h1{
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 400;
 }
 .heading-1{
     color: #c2a43b;
 }
 .head-lines p{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 .banner-img{
     width: 100%;
@@ -33,7 +33,7 @@
 }
 .start-btn{
     border: 0px;
-    padding: 10px 20px;
+    padding: 8px 20px;
     border-radius: 50px;
     background-color: black;
     color: white;

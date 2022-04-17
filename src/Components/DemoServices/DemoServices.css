@@ -1,0 +1,24 @@
+.demo-services{
+    margin-top: 100px;
+}
+
+.demo-heading{
+    width: 70%;
+    margin: auto;
+}
+.demo-heading h1{
+    font-weight: 400;
+}
+.demo-heading p{
+    color: gray;
+}
+#demo-sub{
+    font-weight: 500;
+    color: #b1973b;
+}
+.demo-cards{
+    margin-top: 5rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}

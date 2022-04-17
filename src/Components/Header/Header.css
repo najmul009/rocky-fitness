@@ -1,15 +1,16 @@
-.navbar a{
-    color: white;
-}
+
 .logo h1{
+    font-size: 2rem;
     display: inline;
     color: #e7d98b;
 }
 .logo p{
+    font-size: 1rem;
     font-weight: 100;
     color: #e7d98b;
     letter-spacing: .2rem;
+    margin-bottom: 0;
 }
 .logo img {
-    height: 80px;
+    height: 70px;
 }

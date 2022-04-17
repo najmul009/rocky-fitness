@@ -1,0 +1,20 @@
+[
+    {   
+        "id":1,
+        "title":"ATHLETIC FIGURE",
+        "img":"https://www.rcotterillpt.com/uploads/1/3/4/3/134350959/published/icons8-pullups-100.png?1603724923",
+        "description":"If your busy professional life pushed your physical fitness to the backseat, there is a solution. The RCotterill PT  online plans will help you achieve your desired body image in no time."
+    },
+    {   
+        "id":2,
+        "title":"CONFIDENCE BOOST",
+        "img":"https://www.rcotterillpt.com/uploads/1/3/4/3/134350959/published/icons8-dumbbell-100.png?1603724932",
+        "description":" We don't only focus on the image in the mirror, but also how you feel in your skin. Achieving milestones with your body will transfer into your daily life as increased confidence. "
+    },
+    {
+        "id":3,
+        "title":"QUALITY OF LIFE",
+        "img":"https://www.rcotterillpt.com/uploads/1/3/4/3/134350959/published/icons8-healthy-eating-100.png?1603724906",
+        "description":" The ultimate goal is for you to enjoy your life to the fullest, engage in social situations confidently and take up events you always wanted without limitations of your body."
+    }
+]
