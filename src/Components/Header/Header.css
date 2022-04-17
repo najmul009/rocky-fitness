@@ -1,0 +1,15 @@
+.navbar a{
+    color: white;
+}
+.logo h1{
+    display: inline;
+    color: #e7d98b;
+}
+.logo p{
+    font-weight: 100;
+    color: #e7d98b;
+    letter-spacing: .2rem;
+}
+.logo img {
+    height: 80px;
+}
