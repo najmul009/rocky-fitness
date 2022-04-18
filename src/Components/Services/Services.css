@@ -25,3 +25,11 @@
     color: gray;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.register-form{
+    border-radius: 8px;
+    background: rgb(252, 252, 252);
+    box-shadow: 14px 14px 28px #bebebe,
+    -14px -14px 28px #ffffff;
+    padding: 1rem;
+    margin-top: 2rem;
+}

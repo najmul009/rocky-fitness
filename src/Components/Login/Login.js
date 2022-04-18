@@ -3,7 +3,10 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
-
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import SocilLogin from '../SocilLogin/SocilLogin';
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -55,6 +58,14 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
+    const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
+        auth
+      );
+    const forgetPassword=async ()=>{
+        await sendPasswordResetEmail(userInfo.email)
+        toast("Reset Email send")
+
+    }
     return (
         <div className='register-form'>
         <h2 style={{ textAlign: 'center' }}>Please Login</h2>
@@ -62,8 +73,11 @@ const Login = () => {
            
 
             <input type="email" name="email" id="" placeholder='Email Address' required onChange={handleEmailChange} />
+            {errors?.email && <p className="error-message">{errors.email}</p>}
+
 
             <input type="password" name="password" id="" placeholder='Password' required  onChange={handlePasswordChange} />
+            {errors?.password && <p className="error-message">{errors.password}</p>}
 
            
 
@@ -76,6 +90,9 @@ const Login = () => {
                 value="Login" />
         </form>
         <p>New to Rocky? <Link to="/signup" className='text-primary pe-auto text-decoration-none' >Please SignUp</Link> </p>
+        <button className='btn btn-link' onClick={forgetPassword}> Forget Password</button>
+        <ToastContainer></ToastContainer>
+        <SocilLogin></SocilLogin>
         {/* <SocialLogin></SocialLogin> */}
     </div>
     );

@@ -1,0 +1,40 @@
+.about-container{
+    display: flex;
+    align-items: center;
+    margin: 30px;
+}
+.personla-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 40%; */
+}
+.informaiton p{
+    text-align: justify;
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+.personla-info img{
+    width: 300px;
+}
+@media only screen and (max-width: 576px){
+    .about-container{
+        flex-direction: column;
+        
+    }
+    .informaiton p{
+        margin-top: 40px;
+    }
+
+}
+@media only screen and (min-width: 577px) and (max-width: 992px){
+    .about-container{
+        flex-direction: column;
+    }
+    .informaiton p{
+        margin-top: 30px;
+    }
+
+
+}

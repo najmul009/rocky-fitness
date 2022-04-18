@@ -3,6 +3,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './SignUp.css'
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from "react-firebase-hooks/auth";
 import auth from '../../firebase.init';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import SocilLogin from '../SocilLogin/SocilLogin';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -66,6 +69,7 @@ const SignUp = () => {
     const handelSignUp = async (e) => {
         e.preventDefault();
         await createUserWithEmailAndPassword(userInfo.email, userInfo.password);
+        toast('Email Varification Sent')
         console.log(displayName);
         await updateProfile({displayName });
         console.log(error)
@@ -75,18 +79,22 @@ const SignUp = () => {
         navigate(from, { replace: true });
     }
     return (
-        <div className='register-form'>
+        <div className='register-form mt-4'>
         <h2 style={{ textAlign: 'center' }}>Please SignUp</h2>
         <form onSubmit={handelSignUp}>
             <input type="text" name="name" id="" placeholder='Your Name' onChange={handleNameChange} />
 
             <input type="email" name="email" id="" placeholder='Email Address' required onChange={handleEmailChange} />
+            {errors?.email && <p className="error-message">{errors.email}</p>}
 
             <input type="password" name="password" id="" placeholder='Password' required  onChange={handlePasswordChange} />
+            {errors?.password && <p className="error-message">{errors.password}</p>}
 
             <input type="password" name="confirmPassword" id="" placeholder='Confirm Password' required   onChange={handleConfirmPasswordChange}/>
+            {errors?.password && <p className="error-message">{errors.password}</p>}
 
-
+            {error && <p className="error-message">{error}</p> } 
+                 {hookError && <p className="error-message">{hookError?.message}</p>} 
             <input  type="checkbox" name="terms" id="terms" />
             {/* <label className={agree ? 'ps-2': 'ps-2 text-danger'} htmlFor="terms">Accept Genius Car Terms and Conditions</label> */}
             <label className={`ps-2 `} htmlFor="terms">Accept Genius Car Terms and Conditions</label>
@@ -95,8 +103,10 @@ const SignUp = () => {
                 className='w-50 mx-auto btn btn-primary mt-2'
                 type="submit"
                 value="Register" />
+                <ToastContainer />
         </form>
         <p>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none' >Please Login</Link> </p>
+        <SocilLogin></SocilLogin>
         {/* <SocialLogin></SocialLogin> */}
     </div>
     );

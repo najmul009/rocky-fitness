@@ -1,0 +1,44 @@
+.box{
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    background-color: #faffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.box p{
+    text-align: justify;
+    margin-top: 8px;
+}
+.box h3{
+    margin-bottom: 7px;
+    font-size: 30px;
+}
+.box-container{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    
+}
+.QA{
+    text-align: center;
+    margin: 49px 49px;
+    text-decoration: underline;
+    font-size: 60px;
+    color: #dbad6f;
+}
+@media only screen and (max-width: 576px){
+    .box-container{
+        grid-template-columns:repeat(1,1fr);
+    }
+
+}
+@media only screen and (min-width: 577px) and (max-width: 992px){
+    .box-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
