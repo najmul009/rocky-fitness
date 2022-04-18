@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './SignUp.css'
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from "react-firebase-hooks/auth";
 import auth from '../../firebase.init';
 
 const SignUp = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [userInfo, setUserInfo] = useState({
         name:"",
         email: "", 
@@ -67,6 +70,10 @@ const SignUp = () => {
         await updateProfile({displayName });
         console.log(error)
     };
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
     return (
         <div className='register-form'>
         <h2 style={{ textAlign: 'center' }}>Please SignUp</h2>

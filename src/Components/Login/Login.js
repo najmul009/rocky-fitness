@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
 
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
@@ -49,6 +52,9 @@ const Login = () => {
         await signInWithEmail(userInfo.email, userInfo.password);
         
     };
+    if (user) {
+        navigate(from, { replace: true });
+    }
     return (
         <div className='register-form'>
         <h2 style={{ textAlign: 'center' }}>Please Login</h2>
